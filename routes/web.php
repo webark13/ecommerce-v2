@@ -1,6 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Livewire\CartComponent;
+use App\Http\Livewire\HomeComponent;
+use App\Http\Livewire\ShopComponent;
+use App\Http\Livewire\CheckoutComponent;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +17,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Show Home Page
+Route::get('/', HomeComponent::class)->name('home');
+
+// Show Shop Page
+Route::get('/shop', ShopComponent::class)->name('shop');
+
+// Show Cart Page
+Route::get('/cart', CartComponent::class)->name('cart');
+
+// Show Checkout Page
+Route::get('/checkout', CheckoutComponent::class)->name('checkout');
