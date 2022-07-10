@@ -13,10 +13,27 @@ class CreateProductsTable extends Migration
      */
     public function up()
     {
-        Schema::create('products', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
-        });
+        if (!Schema::hasTable('products')) {
+
+            Schema::create('products', function (Blueprint $table) {
+                $table->id();
+                $table->string('name');
+                $table->string('slug')->unique();
+                $table->string('short_description')->nullable();
+                $table->text('description');
+                $table->decimal('regular_price');
+                $table->decimal('sale_price')->nullable();
+                $table->string('SKU');
+                $table->enum('stock_status', ['instock', 'outofstock']);
+                $table->boolean('featured')->dafault('false');
+                $table->unsignedInteger('quantity')->default(10);
+                $table->string('image')->nullable();
+                $table->text('images')->nullable();
+                $table->unsignedBigInteger('category_id')->nullable();
+                $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
+                $table->timestamps();
+            });
+        }
     }
 
     /**

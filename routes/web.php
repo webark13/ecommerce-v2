@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Livewire\CheckoutComponent;
 use App\Http\Livewire\User\UserDashboardComponent;
 use App\Http\Livewire\Admin\AdminDashboardComponent;
+use App\Http\Livewire\ProductDetailsComponent;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,6 +31,9 @@ Route::get('/cart', CartComponent::class)->name('cart');
 
 // Show Checkout Page
 Route::get('/checkout', CheckoutComponent::class)->name('checkout');
+
+// Show Product Details Page
+Route::get('/product/{slug}', ProductDetailsComponent::class)->name('product.details');
 
 /*
  * Route::middleware([
