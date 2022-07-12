@@ -9,6 +9,7 @@ use App\Http\Livewire\User\UserDashboardComponent;
 use App\Http\Livewire\Admin\AdminDashboardComponent;
 use App\Http\Livewire\CategoryComponent;
 use App\Http\Livewire\ProductDetailsComponent;
+use App\Http\Livewire\SearchComponent;
 
 /*
 |--------------------------------------------------------------------------
@@ -38,6 +39,8 @@ Route::get('/product/{slug}', ProductDetailsComponent::class)->name('product.det
 
 // Show Products according to Category
 Route::get('/category/{slug}', CategoryComponent::class)->name('category');
+
+Route::get('/search', SearchComponent::class)->name('search');
 
 /*
  * Route::middleware([
