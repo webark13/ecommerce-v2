@@ -10,6 +10,9 @@ use App\Http\Livewire\CheckoutComponent;
 use App\Http\Livewire\User\UserDashboardComponent;
 use App\Http\Livewire\Admin\AdminDashboardComponent;
 use App\Http\Livewire\Admin\AdminEditCategoryComponent;
+use App\Http\Livewire\Admin\AdminProductAddComponent;
+use App\Http\Livewire\Admin\AdminProductComponent;
+use App\Http\Livewire\Admin\AdminProductEditComponent;
 use App\Http\Livewire\CategoryComponent;
 use App\Http\Livewire\ProductDetailsComponent;
 use App\Http\Livewire\SearchComponent;
@@ -69,4 +72,7 @@ Route::middleware(['auth:sanctum', 'verified', 'authadmin'])->group(function(){
     Route::get('/admin/categories', AdminCategoryComponent::class)->name('admin.categories');
     Route::get('/admin/category/add', AdminAddCategoryComponent::class)->name('admin.category.add');
     Route::get('/admin/category/edit/{slug}', AdminEditCategoryComponent::class)->name('admin.category.edit');
+    Route::get('/admin/products', AdminProductComponent::class)->name('admin.products');
+    Route::get('/admin/product/add', AdminProductAddComponent::class)->name('admin.product.add');
+    Route::get('admin/product/edit/{product_slug}', AdminProductEditComponent::class)->name('admin.product.edit');
 });
