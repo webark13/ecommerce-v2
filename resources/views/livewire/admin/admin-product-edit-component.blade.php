@@ -124,7 +124,7 @@
                             <div class="form-group">
                                 <label for="" class="control-label col-md-4"></label>
                                 <div class="col-md-4">
-                                    <input type="submit" class="btn btn-primary" value="Edit">
+                                    <input type="submit" class="btn btn-primary" value="Update">
                                 </div>
                             </div>
 

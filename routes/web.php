@@ -17,16 +17,6 @@ use App\Http\Livewire\CategoryComponent;
 use App\Http\Livewire\ProductDetailsComponent;
 use App\Http\Livewire\SearchComponent;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
 
 // Show Home Page
 Route::get('/', HomeComponent::class)->name('home');
@@ -46,20 +36,8 @@ Route::get('/product/{slug}', ProductDetailsComponent::class)->name('product.det
 // Show Products according to Category
 Route::get('/category/{slug}', CategoryComponent::class)->name('category');
 
+// Show search results
 Route::get('/search', SearchComponent::class)->name('search');
-
-/*
- * Route::middleware([
-    'auth:sanctum',
-    config('jetstream.auth_session'),
-    'verified'
-])->group(function () {
-    Route::get('/dashboard', function () {
-        return view('dashboard');
-    })->name('dashboard');
-}); 
-
-*/
 
 // For Normal User or Customer
 Route::middleware(['auth:sanctum', 'verified'])->group(function(){
